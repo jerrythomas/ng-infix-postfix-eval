@@ -1,0 +1,22 @@
+<article>
+  <p>This blitz visualizes the steps to convert an expression in <a href="https://en.wikipedia.org/wiki/Infix_notation">infix</a> to <a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">postfix</a> and then the steps for evaluating the postfix expression. </p>
+</article>
+<app-infix (tokenStream)="evaluateTokenStream($event)"></app-infix>
+<label>
+    Postfix:
+    <div>
+      <p *ngFor="let token of tokens" [class]="token.state">{{token.text}}</p>  
+    </div>
+</label>
+
+<label *ngIf="showEval">
+    Result:
+    <p>{{evalResult}}</p>
+</label>
+<label>
+    {{stackLabel}}:
+    <app-stack></app-stack>
+</label>
+
+
+

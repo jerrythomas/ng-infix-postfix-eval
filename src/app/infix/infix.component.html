@@ -1,0 +1,7 @@
+<label>
+  Evaluate:
+  <input type="text" [formControl]="expr" (keyup.enter)="evaluate()" [ngClass]="{'error' : !valid}" />
+  <ul *ngIf="reasons.length > 0">{{reason}}
+    <li *ngFor="let reason of reasons">{{reason}}</li>
+  </ul>
+</label>
